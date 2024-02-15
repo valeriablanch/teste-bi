@@ -1,0 +1,5 @@
+include README.rst
+include CONTRIBUTING.rst
+include requirements.txt
+graft mining
+recursive-include *.html *.css *.js *.png *.gif *.woff *.ttf *.svg *.eot *.txt

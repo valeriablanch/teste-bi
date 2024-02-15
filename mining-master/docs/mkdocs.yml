@@ -1,0 +1,4 @@
+site_name: OpenMining
+theme_dir: 'themes/mining'
+theme: mining
+dev_addr: 0.0.0.0:8000

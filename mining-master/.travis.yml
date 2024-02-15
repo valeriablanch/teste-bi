@@ -1,0 +1,20 @@
+language: python
+python:
+  - "2.7"
+env:
+  - LUA=libluajit-5.1
+  - LUA=lua5.2-dev
+services:
+  - redis-server
+cache:
+  - pip
+  - apt
+install:
+  - sudo apt-get install $LUA
+  - make environment
+script: make test
+notifications:
+  irc: "irc.freenode.org#openmining"
+  on_success: "never"
+after_success:
+  - coveralls

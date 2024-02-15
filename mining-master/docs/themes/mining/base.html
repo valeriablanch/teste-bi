@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Business analytics and business intelligence leaders - openmining</title>
+		{% if page_description %}<meta name="description" content="{{ page_description }}">{% endif %}
+		{% if site_author %}<meta name="author" content="{{ site_author }}">{% endif %}
+		{% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
+		{% if favicon %}<link rel="shortcut icon" href="{{ favicon }}">
+		{% else %}<link rel="shortcut icon" href="{{ base_url }}/img/favicon.ico">{% endif %}
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="stylesheet" href="flat-ui/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="flat-ui/css/flat-ui.css">
+		<!-- Using only with Flat-UI (free)-->
+		<link rel="stylesheet" href="common-files/css/icon-font.css">
+		<!-- end -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+    <body>
+        <div class="page-wrapper">
+            <!-- header-11 -->
+            <header class="header-11">
+                <div class="container">
+                    <div class="row">
+                        <div class="navbar col-sm-12" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle"></button>
+                                <a class="brand" href="#"><img src="img/logo.png" width="50" height="50" alt=""> openmining</a>
+                            </div>
+                            <div class="collapse navbar-collapse pull-right">
+                                <ul class="nav pull-left">
+									{% for toc_item in toc %}
+									<li class="{% if toc_item.active %}active{% endif %}"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+									  {% if toc_item.children %}
+									  <ul>
+										  {% for toc_item in toc_item.children %}
+										  <li class="page-scroll"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+										  {% endfor %}
+									  </ul>
+									  {% endif %}
+									{% endfor %}
+                                </ul>
+								 {% if include_search %}{% include "search.html" %}{% endif %}
+								<!--
+                                <form class="navbar-form pull-left">
+                                    <a class="btn btn-primary" href="#">SIGN IN</a>
+                                </form>
+								-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="header-11-sub bg-midnight-blue">
+                <div class="background">
+                    &nbsp;
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="">
+							{{ content }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- logos -->
+            <section class="logos">
+                <div class="container">
+                    <div><img src="img/logos/project1.png" alt="">
+                    </div>
+                    <div><img src="img/logos/up.png" alt="">
+                    </div>
+                    <div><img src="img/logos/lemes.png" alt="">
+                    </div>
+                    <div><img src="img/logos/red-bull.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <!-- content-13  -->
+            <section class="content-13 subscribe-form bg-turquoise">
+                <div class="container">
+                    <div class="row">
+					    <form action="//avelino.us2.list-manage.com/subscribe/post?u=7b96cb90ef2c015a27a3bef0a&amp;id=5c1d3b9555" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div class="col-sm-8">
+                                <input type="email" name="EMAIL" placeholder="Enter your e-mail" spellcheck="false" required>
+                            </div>
+                            <div class="col-sm-4">
+                                <button class="btn btn-large btn-primary" type="submit">
+                                    Subscribe now
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- footer-2 -->
+            <footer class="footer-2 bg-midnight-blue">
+                <div class="container">
+                    <nav class="pull-left">
+                        <ul>
+							{% for toc_item in toc %}
+							<li class="{% if toc_item.active %}active{% endif %}"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+							{% endfor %}
+                        </ul>
+                    </nav>
+                    <div class="social-btns pull-right">
+                        <a href="https://www.facebook.com/pages/OpenMining/810917208943124?ref=bookmarks"><div class="fui-facebook"></div><div class="fui-facebook"></div></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="common-files/js/jquery-1.10.2.min.js"></script>
+        <script src="flat-ui/js/bootstrap.min.js"></script>
+        <script src="common-files/js/modernizr.custom.js"></script>
+        <script src="common-files/js/startup-kit.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

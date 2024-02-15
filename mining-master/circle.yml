@@ -1,0 +1,16 @@
+machine:
+  python:
+    version: 2.7.10
+  environment:
+    LUA: libluajit-5.1
+    LUA: lua5.2-dev
+dependencies:
+  pre:
+    - sudo apt-get install $LUA
+  override:
+    - make environment
+test:
+  override:
+    - make test
+  post:
+    - COVERALLS_REPO_TOKEN=OsBAZq24c5Ilf41OfccJyAwEmz3hNAkR2 coveralls
